@@ -10,6 +10,20 @@ Kies een map vol plaatjes en overhoor jezelf de leplazarus.
 3. Kies één of meerdere klassen.
 4. Ga lekker overhoren en imponeer je leerlingen aan het begin van het schooljaar.
 
+## Smoelen importeren uit Magister
+
+1. Ga naar Magister > Leerlingen
+2. Selecteer alle Leerlingen uit een klas en print een fotolijst als PDF
+3. Open Smoelentoetser en selecteer de map waar je de foto's naar wilt importeren
+4. Klik op `Selecteer Klassen`
+5. Klik op `Importeer klas`
+6. Typ de naam van de klas die overeenkomt met de klasnaam in de PDF. Je krijgt een foutmelding als deze niet overeenkomen.
+7. Klik op `Kies PODF & importeer`
+8. Ga nu naar de PDF voor de klassenlijst. Zodra deze geselecteerd is verschijnt de klas in het klassenoverzicht.
+9. Wanneer er leerlingen zijn met bijzondere namen moet je nog even de bestanden aanpassen naar het onderstaande format.
+
+<img width="591" height="257" alt="image" src="https://github.com/user-attachments/assets/d6997e39-fd90-495a-97a8-497e6acf30f3" />
+
 ## Smoelenmap formaat
 Plaats alle `png` of `jpg` afbeeldingen in één map.
 De bestandsnaam bestaat uit de volgende onderdelen:
