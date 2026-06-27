@@ -72,17 +72,37 @@ fun GroupSelectionScreen(
             }
         }
         vspace(8.dp)
-        Button(
-            colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary),
-            onClick = toggleAll
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                imageVector = ComposeIcons.group,
-                contentDescription = "Alle klassen selecteren",
-                modifier = Modifier.size(20.dp),
-            )
-            hspace(8.dp)
-            Text(text = "Alle klassen")
+            Button(
+                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary),
+                onClick = toggleAll
+            ) {
+                Icon(
+                    imageVector = ComposeIcons.group,
+                    contentDescription = "Alle klassen selecteren",
+                    modifier = Modifier.size(20.dp),
+                )
+                hspace(8.dp)
+                Text(text = "Alle klassen")
+            }
+            hspace(12.dp)
+            Button(
+                colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.secondary),
+                onClick = toggleAll
+            ) {
+                Icon(
+                    imageVector = ComposeIcons.fileImport,
+                    contentDescription = "Importeer klas",
+                    modifier = Modifier.size(20.dp),
+                )
+                hspace(8.dp)
+                Text(text = "Importeer klas")
+            }
         }
         vspace(48.dp)
 

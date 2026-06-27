@@ -98,7 +98,7 @@ fun StartScreen(
         // Next step.
         Button(
             onNextStep,
-            enabled = folderState == SelectFolder.FolderState.VALID,
+            enabled = folderState != SelectFolder.FolderState.NOT_EXISTS,
         ) {
             Text(text = "Selecteer klassen")
             hspace(8.dp)

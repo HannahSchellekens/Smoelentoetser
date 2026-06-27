@@ -44,7 +44,7 @@ open class SelectFolder(defaultFolder: String? = null) {
 
     enum class FolderState(val description: String, val color: Color) {
         VALID("Smoelenmap geselecteerd!", Color.hsl(123f, 0.38f, 0.57f)),
-        INVALID_BUT_EXISTS("Map is geen valide smoelenmap", Color.Red),
+        INVALID_BUT_EXISTS("Map is geen valide (of lege) smoelenmap", Color.Red),
         NOT_EXISTS("Map bestaat niet", Color.Red),
         NOT_SELECTED("Geen smoelenmap geselecteerd", Color.Red),
     }
