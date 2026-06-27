@@ -39,6 +39,9 @@ dependencies {
 
     // KERFETTIIIIIII
     implementation("io.github.vinceglb:confettikit:0.6.0")
+
+    // PDF inlezen voor Magister leerlinglijst parser.
+    implementation("org.apache.pdfbox:pdfbox:3.0.3")
 }
 
 compose.desktop {
