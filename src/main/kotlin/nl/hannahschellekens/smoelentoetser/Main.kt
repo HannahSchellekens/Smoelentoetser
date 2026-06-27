@@ -1,15 +1,12 @@
 package nl.hannahschellekens.smoelentoetser
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.painter.BitmapPainter
-import androidx.compose.ui.res.loadImageBitmap
-import androidx.compose.ui.res.useResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
@@ -32,6 +29,9 @@ import nl.hannahschellekens.smoelentoetser.view.GroupSelectionScreen
 import nl.hannahschellekens.smoelentoetser.view.PracticeSessionScreen
 import nl.hannahschellekens.smoelentoetser.view.StartScreen
 import java.io.File
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
 
 @Composable
 @Preview
@@ -67,10 +67,20 @@ fun App() {
             }
             composable<AppScreen.SelectGroups> { input ->
                 val selectFolder: AppScreen.SelectGroups = input.toRoute()
-                val groups = File(selectFolder.smoelenmap).extractGroups()
-                val groupSelection = remember { GroupSelection(groups) }
+
+                // Een trigger om de UI te forceren opnieuw de map uit te lezen
+                var refreshTrigger by remember { mutableStateOf(0) }
+
+                // We stoppen refreshTrigger in de remember().
+                // Als het getal verandert, leest hij de mappen opnieuw uit!
+                val groupSelection = remember(refreshTrigger) {
+                    val groups = File(selectFolder.smoelenmap).extractGroups()
+                    GroupSelection(groups)
+                }
+
                 GroupSelectionScreen(
                     groupSelection,
+                    directoryPath = selectFolder.smoelenmap,
                     groupSelection::toggleGroup,
                     groupSelection::toggleAll,
                     onPreviousStep = {
@@ -81,6 +91,9 @@ fun App() {
                             selectFolder.smoelenmap,
                             groupSelection.selectedGroups
                         ))
+                    },
+                    onImportSuccess = {
+                        refreshTrigger++
                     },
                     modifier = Modifier.fillMaxSize(),
                 )
