@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "nl.hannahschellekens.smoelentoetser"
-version = "1.0-SNAPSHOT"
+version = "1.1-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -51,7 +51,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
             packageName = "Smoelentoetser"
-            packageVersion = "1.0.0"
+            packageVersion = "1.1.0"
 
             macOS {
                 iconFile.set(project.file("src/main/resources/icon.icns"))
